@@ -30,6 +30,8 @@ const reducer = (state = initialState, action) => {
         ? dote
         : { ...dote, votes: (dote.votes+1)}
       );
+    case 'NEW_ANECDOTE':
+      return [ ...state, asObject(action.payload.anecdote) ];
     default: return state;
   }
 };
