@@ -10,7 +10,7 @@ const filterSlice = createSlice({
       return action.payload;
     }
   }
-})
+});
 
 export const { filterChange } = filterSlice.actions;
 
