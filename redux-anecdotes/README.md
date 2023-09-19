@@ -1,0 +1,1 @@
+Redux Anecdotes project for pt. 6 of Full Stack Open
