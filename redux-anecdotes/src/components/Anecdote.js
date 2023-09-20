@@ -1,14 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { yoVote } from '../reducers/anecdoteReducer';
-import { notify, removeNotification } from '../reducers/notificationReducer';
+import { setNotification } from '../reducers/notificationReducer';
 
 const Anecdote = ({ anecdote }) => {
   const dispatch = useDispatch();
 
   const handleClick = async () => {
     dispatch(yoVote(anecdote));
-    dispatch(notify(`you voted '${anecdote.content}'`));
-    setTimeout(() => dispatch(removeNotification()), 5000);
+    dispatch(setNotification(`you voted '${anecdote.content}'`, 5));
   };
 
   return (
