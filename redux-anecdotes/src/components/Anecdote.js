@@ -6,7 +6,7 @@ const Anecdote = ({ anecdote }) => {
   const dispatch = useDispatch();
 
   const handleClick = async () => {
-    dispatch(yoVote(anecdote.id));
+    dispatch(yoVote(anecdote));
     dispatch(notify(`you voted '${anecdote.content}'`));
     setTimeout(() => dispatch(removeNotification()), 5000);
   };

@@ -21,12 +21,10 @@ const anecdoteSlice = createSlice({
   }
 });
 
-export const yoVote = (id) => {
-  return async (dispatch, getState) => {
-    const foundById = getState().anecdotes.filter(dote => dote.id === id);
-    if(foundById.length !== 1) return null;
-    await anecdoteService.addVote(foundById[0]);
-    dispatch(anecdoteSlice.actions.addVote(id));
+export const yoVote = (anecdote) => {
+  return async dispatch => {
+    await anecdoteService.addVote(anecdote);
+    dispatch(anecdoteSlice.actions.addVote(anecdote.id));
   };
 };
 
