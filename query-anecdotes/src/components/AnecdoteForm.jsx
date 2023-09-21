@@ -10,6 +10,18 @@ const AnecdoteForm = () => {
     onSuccess: (newDote) => {
       const anecdotes = queryClient.getQueryData({ queryKey: ['anecdotes'] });
       queryClient.setQueryData({ queryKey: ['anecdotes'] }, anecdotes.concat(newDote));
+      dispatch({
+        type: 'NOTIFY',
+        payload: { content: `new anecdote '${newDote.content}' added` }
+      });
+      setTimeout(() => dispatch({ type: 'REMOVE' }), 5000);
+    },
+    onError: (error) => {
+      dispatch({
+        type: 'NOTIFY',
+        payload: { content: error.response.data.error }
+      });
+      setTimeout(() => dispatch({ type: 'REMOVE' }), 5000);
     }
   });
 
@@ -18,11 +30,6 @@ const AnecdoteForm = () => {
     const content = event.target.anecdote.value;
     event.target.anecdote.value = '';
     newAnecdoteMutation.mutate({ content, votes: 0 });
-    dispatch({
-      type: 'NOTIFY',
-      payload: { content: `new anecdote '${content}' added` }
-    });
-    setTimeout(() => dispatch({ type: 'REMOVE' }), 5000);
   };
 
   return (

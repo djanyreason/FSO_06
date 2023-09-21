@@ -16,16 +16,23 @@ const App = () => {
           ? votedDote
           : dote
       ));
+      dispatch({
+        type: 'NOTIFY',
+        payload: { content: `anecdote '${votedDote.content}' voted` }
+      });
+      setTimeout(() => dispatch({ type: 'REMOVE' }), 5000);
+    },
+    onError: (error) => {
+      dispatch({
+        type: 'NOTIFY',
+        payload: { content: error.response.data.error }
+      });
+      setTimeout(() => dispatch({ type: 'REMOVE' }), 5000);
     }
   });
 
   const handleVote = (anecdote) => {
     newAnecdoteMutation.mutate(anecdote);
-    dispatch({
-      type: 'NOTIFY',
-      payload: { content: `anecdote '${anecdote.content}' voted` }
-    });
-    setTimeout(() => dispatch({ type: 'REMOVE' }), 5000);
   };
 
   const result = useQuery({
