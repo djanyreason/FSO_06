@@ -1,4 +1,4 @@
-This repository is for exercises in Part 6 of Full Stack Open (FSO), "Advanced state management" - https://fullstackopen.com/en/part2
+This repository is for exercises in Part 6 of Full Stack Open (FSO), "Advanced state management" - https://fullstackopen.com/en/part6
 
 The exercises in this part focus on front-end development in React. Some of them also have a back-end component, which is handled through json-server.
 
