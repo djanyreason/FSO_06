@@ -1,4 +1,4 @@
-This folder contains the Unicafe Revisited project which is developed in exercises 6.1-6.2 of Full Stack Open part 2: https://fullstackopen.com/en/part6/flux_architecture_and_redux#exercises-6-1-6-2
+This folder contains the Unicafe Revisited project which is developed in exercises 6.1-6.2 of Full Stack Open part 6: https://fullstackopen.com/en/part6/flux_architecture_and_redux#exercises-6-1-6-2
 
 The app is built starting from code in the following repository: https://github.com/fullstack-hy2020/unicafe-redux
 
