@@ -2,7 +2,7 @@ This repository is for exercises in Part 6 of Full Stack Open (FSO), "Advanced s
 
 The exercises in this part focus on front-end development in React. Some of them also have a back-end component, which is handled through json-server.
 
-The projects in this section focus on react state management either through Redux or through the combination of React Query for backend and useReducer for frontend.
+The projects in this section focus on react state management either through Redux or through the combination of React Query for managing state of remotely stored data and useReducer for state of frontend/local-only elements.
 
 There are three projects contained in this repository, each in their own subfolder:
 
